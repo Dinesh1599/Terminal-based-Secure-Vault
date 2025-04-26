@@ -17,3 +17,21 @@ def key_derive(password: str, salt: bytes):
     )
     return kdf.derive(password.encode())
 
+
+#Encryption
+def encrypt_data(key: bytes, plaintext: str):
+    iv = os.urandom(16)
+    ciphper = Cipher(algorithms.AES(key), modes.CFB(iv))
+    encryptor = ciphper.encryptor()
+    ciphpertext = encryptor.update(plaintext.encode()) + encryptor.finalize()
+    return base64.b64decode(iv + ciphpertext).decode()
+
+#Decrypt
+def decrypt_data(key: bytes, ciphertext: str):
+    data = base64.b64decode(ciphertext.encode())
+    iv = data[:16]
+    cText = data[16:]
+    cipher = Cipher(algorithms.AES(key), modes.CFB(iv))
+    decryptor = cipher.decryptor()
+    plaintext = decryptor.update(cText) + decryptor.finalize()
+    return plaintext.decode()
