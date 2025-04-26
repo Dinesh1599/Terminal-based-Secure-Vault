@@ -20,11 +20,10 @@ def key_derive(password: str, salt: bytes):
 
 #Encryption
 def encrypt_data(key: bytes, plaintext: str):
-    iv = os.urandom(16)  # Initialization vector
+    iv = os.urandom(16)
     cipher = Cipher(algorithms.AES(key), modes.CFB(iv))
     encryptor = cipher.encryptor()
     ciphertext = encryptor.update(plaintext.encode()) + encryptor.finalize()
-    # Return base64-encoded result: IV + encrypted data
     return base64.b64encode(iv + ciphertext).decode()
 
 
