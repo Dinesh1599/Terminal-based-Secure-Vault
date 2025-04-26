@@ -35,3 +35,12 @@ def decrypt_data(key: bytes, ciphertext: str):
     decryptor = cipher.decryptor()
     plaintext = decryptor.update(cText) + decryptor.finalize()
     return plaintext.decode()
+
+def main():
+    data = b"Secret Text"
+    key = os.urandom(32)  # AES-256 requires a 32-byte key
+    encrypted_data = encrypt_data(key, data)
+    print(f"Encrypted Data: {encrypted_data}")
+
+if __name__ == "__main__":
+    main()
