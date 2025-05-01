@@ -20,10 +20,11 @@ def key_derive(password: str, salt: bytes):
 
 #Encryption
 def encrypt_data(key: bytes, plaintext: str):
-    iv = os.urandom(16)
+    iv = os.urandom(16)  # Initialization vector
     cipher = Cipher(algorithms.AES(key), modes.CFB(iv))
     encryptor = cipher.encryptor()
     ciphertext = encryptor.update(plaintext.encode()) + encryptor.finalize()
+    # Return base64-encoded result: IV + encrypted data
     return base64.b64encode(iv + ciphertext).decode()
 
 
@@ -36,19 +37,3 @@ def decrypt_data(key: bytes, ciphertext: str):
     decryptor = cipher.decryptor()
     plaintext = decryptor.update(cText) + decryptor.finalize()
     return plaintext.decode()
-
-
-def main():
-    password = "supersecretpassword"
-    salt = os.urandom(16)
-    key = key_derive(password, salt)  # Derive the key from password
-
-    data = "Hello, this is a secret message!"  # Data to encrypt
-    encrypted_data = encrypt_data(key, data)  # Encrypt the data
-    print(f"Encrypted Data: {encrypted_data}")
-
-    decrypted_data = decrypt_data(key, encrypted_data)  # Decrypt the data
-    print(f"Decrypted Data: {decrypted_data}")
-
-if __name__ == "__main__":
-    main()
