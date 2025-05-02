@@ -68,7 +68,7 @@
 <h2>Screen shots</h2>
 
 <p>The above image shows how the encrypted appears within the database</p>
-![Demo](https://github.com/user-attachments/assets/c4eae8c0-ebc8-4947-b903-de5dbf6f909e)
+![Image](https://github.com/user-attachments/assets/0da56aa8-20bb-440a-96e2-68746124b4a4)
 
 
 <hr>
