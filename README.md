@@ -65,6 +65,14 @@
 
 <hr>
 
+<h2>Screen shots</h2>
+
+<p>The above image shows how the encrypted appears within the database</p>
+![image](https://github.com/user-attachments/assets/c4eae8c0-ebc8-4947-b903-de5dbf6f909e)
+
+
+<hr>
+
 <h2>🔐 Security Highlights</h2>
 <ul>
   <li>AES-256 encryption in CFB mode</li>
