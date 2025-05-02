@@ -2,16 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Secure Vault - README</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2em; background: #f9f9f9; color: #333; }
-    code { background: #eee; padding: 2px 4px; border-radius: 4px; font-family: Consolas, monospace; }
-    pre { background: #eee; padding: 1em; border-radius: 5px; overflow-x: auto; }
-    h1, h2, h3 { color: #111; }
-    hr { border: none; height: 1px; background: #ccc; margin: 2em 0; }
-  </style>
-</head>
-<body>
+  
 
 <h1>🔐 Secure Vault</h1>
 <p>A terminal-based encrypted data storage application built in Python. Secure Vault allows users to store sensitive data such as passwords or notes in an encrypted SQLite database using AES-256 encryption and PBKDF2 key derivation. It also includes auto-locking on inactivity to protect sessions.</p>
